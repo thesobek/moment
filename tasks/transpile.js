@@ -199,12 +199,12 @@ module.exports = function (grunt) {
             grunt.log.ok('build/umd/test/locale/*.js');
         }).then(function () {
             return generateLocales('build/umd/min/locales.js',
-                grunt.file.expand({cwd: 'src'}, 'locale/*.js'));
+                grunt.file.expand({cwd: 'src'}, ['locale/*de*.js', 'locale/*en*.js']));
         }).then(function () {
             grunt.log.ok('build/umd/min/locales.js');
         }).then(function () {
             return generateMomentWithLocales('build/umd/min/moment-with-locales.js',
-                grunt.file.expand({cwd: 'src'}, 'locale/*.js'));
+                grunt.file.expand({cwd: 'src'}, ['locale/*de*.js', 'locale/*en*.js']));
         }).then(function () {
             grunt.log.ok('build/umd/min/moment-with-locales.js');
         }).then(done, function (e) {
